@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Responsive Bank UI</title>
+<style>
+#b1{
+    background-color: aqua;
+    color: white;
+}
+#b2{
+    background-color: orange;
+    color: white;
+}
+</head>
+</style>
+<body>
+<h2>Balance : $ <span id="balance"></span></h2>
+<label for="amount">

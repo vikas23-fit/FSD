@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Responsive Bank UI</title>
+    <style>
+        #b1{
+            background-color: aqua;
+            color: white;
+        }
+        #b2{
+            background-color: orangered;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <h2>Balance : $ <span id="balance"></span></h2>
+    <label for="amount">Amount</label> <br><br>
+    <input type="number" placeholder="Enter Amount" id="amount" > <br><br>
+    <button id="b1" onmouseover="deposit()">Deposit</button> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <button id="b2" onclick="withdraw()">Withdraw</button>
+    <p id="message"></p>
+</body>
+<script>
+    let balance = 0;
+    document.getElementById('balance').innerText = balance;
+    function deposit(){
+        let amount = document.getElementById('amount').value;
+        let numAmount = Number(amount);
+        if(numAmount > 0){
+            balance = balance + numAmount;
+            document.getElementById('balance').innerText = balance;
+            document.getElementById('message').innerText = "Amount Deposited Successfully.";
+        }
+        else{
+            document.getElementById('message').innerText = "Please enter a valid amount.";
+        }
+        document.getElementById('amount').value = "";
+    }
+    function withdraw(){
+        let amount = document.getElementById('amount').value;
+        let numAmount = Number(amount);
+        if(numAmount > 0 && balance >= numAmount){
+            balance -= numAmount;
+            document.getElementById('balance').innerText = balance;
+            document.getElementById('message').innerText = "Amount Withdrawn Successfully.";
+        }
+        else if(numAmount <= 0){
+            document.getElementById('message').innerText = "Please enter a valid amount.";
+        }
+        else{
+            document.getElementById('message').innerText = "Insufficient balance.";
+        }
+        document.getElementById('amount').value = "";
+    }
+</script>
+</html>

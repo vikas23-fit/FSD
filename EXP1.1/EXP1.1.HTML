@@ -1,0 +1,37 @@
+<html>
+<head>
+    <title>Student Registration Form</title>
+    <link rel="stylesheet" href="exp1.css">
+</head>
+
+<body>
+    <i><u><h2>User Registration</h2></u></i>
+
+    <form>
+        <!-- Name -->
+        <label>Name :</label><br>
+        <input type="text" 
+               name="name" 
+               required 
+               pattern="[A-Za-z ]{3,}" 
+               title="Name should contain only letters and spaces"><br><br>
+
+        <!-- Email -->
+        <label>Email :</label><br>
+        <input type="email" 
+               name="email" 
+               required><br><br>
+
+        <!-- Age -->
+        <label>Age :</label><br>
+        <input type="number" 
+               name="age" 
+               min="18" 
+               max="60" 
+               required><br><br>
+
+        <!-- Submit Button -->
+        <input type="submit" value="Register">
+    </form>
+</body>
+</html>
